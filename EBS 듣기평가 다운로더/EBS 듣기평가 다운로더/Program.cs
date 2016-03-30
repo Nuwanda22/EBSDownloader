@@ -16,7 +16,7 @@ namespace EBS_듣기평가_다운로더
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			Application.Run(new MainForm());
 		}
 	}
 }
