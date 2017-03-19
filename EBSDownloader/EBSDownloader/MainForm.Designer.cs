@@ -82,7 +82,7 @@
             // DateLabel
             // 
             this.DateLabel.AutoSize = true;
-            this.DateLabel.Location = new System.Drawing.Point(85, 80);
+            this.DateLabel.Location = new System.Drawing.Point(190, 80);
             this.DateLabel.Name = "DateLabel";
             this.DateLabel.Size = new System.Drawing.Size(0, 12);
             this.DateLabel.TabIndex = 5;

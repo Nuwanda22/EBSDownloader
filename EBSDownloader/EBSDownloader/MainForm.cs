@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.IO;
 using CsQuery;
+using System.Text.RegularExpressions;
 
 namespace EBSDownloader
 {
@@ -24,7 +25,12 @@ namespace EBSDownloader
 		{
             if (string.IsNullOrWhiteSpace(DownloadUrlTextBox.Text))
             {
-                MessageBox.Show("Please fill in the black space.");
+                MessageBox.Show("Please fill in the black space.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (!Regex.IsMatch(DownloadUrlTextBox.Text, @"http:\/\/home\.ebs\.co\.kr\/home1810\/replay\/.{2}\/view"))
+            {
+                MessageBox.Show("Please make sure you entered the correct address.", "Invalid URL", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             
