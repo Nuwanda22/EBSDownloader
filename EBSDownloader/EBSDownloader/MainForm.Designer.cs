@@ -37,14 +37,20 @@
             // 
             // downloadUrlTextBox
             // 
+            this.downloadUrlTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.downloadUrlTextBox.Location = new System.Drawing.Point(12, 12);
             this.downloadUrlTextBox.Name = "downloadUrlTextBox";
-            this.downloadUrlTextBox.Size = new System.Drawing.Size(260, 21);
+            this.downloadUrlTextBox.Size = new System.Drawing.Size(604, 21);
             this.downloadUrlTextBox.TabIndex = 0;
+            this.downloadUrlTextBox.Text = "http://home.ebs.co.kr/home1810/replay/53/view?courseId=10021633&stepId=10025259&p" +
+    "rodId=119874&pageNo=2&lectId=10500721&lectNm=&bsktPchsYn=&prodDetlId=&oderProdCl" +
+    "sCd=&prodFig=&vod=A&oderProdDetlClsCd=";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(197, 75);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(541, 75);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -58,14 +64,17 @@
             // 
             // downloadProgressBar
             // 
+            this.downloadProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.downloadProgressBar.Location = new System.Drawing.Point(12, 39);
             this.downloadProgressBar.Name = "downloadProgressBar";
-            this.downloadProgressBar.Size = new System.Drawing.Size(260, 23);
+            this.downloadProgressBar.Size = new System.Drawing.Size(604, 23);
             this.downloadProgressBar.TabIndex = 2;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(116, 75);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(460, 75);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -77,13 +86,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 110);
+            this.ClientSize = new System.Drawing.Size(628, 110);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.downloadProgressBar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.downloadUrlTextBox);
             this.Name = "MainForm";
-            this.Text = "EBS 다운로더";
+            this.Text = "EBS Downloader";
             this.ResumeLayout(false);
             this.PerformLayout();
 

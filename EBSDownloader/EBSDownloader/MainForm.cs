@@ -9,15 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.IO;
+using CsQuery;
 
 namespace EBSDownloader
 {
 	public partial class MainForm : Form
 	{
-		string url = "http://wstrotu.ebs.co.kr/ebsvod/lang/2016/10021633/mp3/20160922_110013_f97c8384_mp3.mp3?key=c2673c3448249de11cd8d8d1713ef69a04d45241";
-		string fileName = "20160922_110013_f97c8384_mp3.mp3";
-		
-
 		public MainForm()
 		{
 			InitializeComponent();
@@ -25,7 +22,10 @@ namespace EBSDownloader
 
 		private async void button1_Click(object sender, EventArgs e)
 		{
-			saveFileDialog.FileName = fileName;
+            string url = "http://wstrotu.ebs.co.kr/ebsvod/lang/2016/10021633/mp3/20160922_110013_f97c8384_mp3.mp3?key=c2673c3448249de11cd8d8d1713ef69a04d45241";
+            string fileName = "20160922_110013_f97c8384_mp3.mp3";
+
+            saveFileDialog.FileName = fileName;
 			if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{
                 await DownloadFileAsync(url, saveFileDialog.FileName);
@@ -47,52 +47,15 @@ namespace EBSDownloader
                 downloadProgressBar.Value = 0;
             }
         }
-
-		private string HTMLfrom(string Url) 
-		{
-			string urlAddress = Url;
-			string temp;
-			HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
-			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-			if (response.StatusCode == HttpStatusCode.OK)
-			{
-				Stream receiveStream = response.GetResponseStream();
-				StreamReader readStream = null;
-
-				if (response.CharacterSet == null)
-				{
-					readStream = new StreamReader(receiveStream);
-				}
-				else
-				{
-					readStream = new StreamReader(receiveStream, Encoding.GetEncoding(response.CharacterSet));
-				}
-
-				temp = readStream.ReadToEnd();
-
-				response.Close();
-				readStream.Close();
-			}
-			else
-			{
-				throw new ArgumentException("주소가 응답하지 않습니다.");
-			}
-
-			return temp;
-		}
-
+        
 		private void button2_Click(object sender, EventArgs e)
 		{
-			string temp = HTMLfrom(downloadUrlTextBox.Text);
-			MessageBox.Show(temp);
-
-			//int index1 = temp.IndexOf("<audio");
-			//int index2 = temp.IndexOf("</audio>");
-
-			//string a= temp.Substring(index1, index2 - index1);
-
-			//MessageBox.Show(index1.ToString()+" "+index2.ToString());
-		}
+            var html = CQ.CreateFromUrl(downloadUrlTextBox.Text); 
+            var title = html["h5"].Text().Trim();
+            var date = html["p.date"].Text().Trim();
+            var audio = html["audio"].Attr("src");
+            
+            MessageBox.Show($"{title} {DateTime.Parse(date.Replace('.', '-'))}");
+        }
 	}
 }
