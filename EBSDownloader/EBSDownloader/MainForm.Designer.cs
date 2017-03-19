@@ -28,69 +28,74 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.downloadUrlTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.DownloadUrlTextBox = new System.Windows.Forms.TextBox();
+            this.DownloadButton = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.downloadProgressBar = new System.Windows.Forms.ProgressBar();
-            this.button2 = new System.Windows.Forms.Button();
+            this.DownloadProgressBar = new System.Windows.Forms.ProgressBar();
+            this.TitleLabel = new System.Windows.Forms.Label();
+            this.DateLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // downloadUrlTextBox
+            // DownloadUrlTextBox
             // 
-            this.downloadUrlTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.DownloadUrlTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.downloadUrlTextBox.Location = new System.Drawing.Point(12, 12);
-            this.downloadUrlTextBox.Name = "downloadUrlTextBox";
-            this.downloadUrlTextBox.Size = new System.Drawing.Size(604, 21);
-            this.downloadUrlTextBox.TabIndex = 0;
-            this.downloadUrlTextBox.Text = "http://home.ebs.co.kr/home1810/replay/53/view?courseId=10021633&stepId=10025259&p" +
-    "rodId=119874&pageNo=2&lectId=10500721&lectNm=&bsktPchsYn=&prodDetlId=&oderProdCl" +
-    "sCd=&prodFig=&vod=A&oderProdDetlClsCd=";
+            this.DownloadUrlTextBox.Location = new System.Drawing.Point(12, 12);
+            this.DownloadUrlTextBox.Name = "DownloadUrlTextBox";
+            this.DownloadUrlTextBox.Size = new System.Drawing.Size(604, 21);
+            this.DownloadUrlTextBox.TabIndex = 0;
             // 
-            // button1
+            // DownloadButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(541, 75);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Download";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.DownloadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DownloadButton.Location = new System.Drawing.Point(541, 75);
+            this.DownloadButton.Name = "DownloadButton";
+            this.DownloadButton.Size = new System.Drawing.Size(75, 23);
+            this.DownloadButton.TabIndex = 1;
+            this.DownloadButton.Text = "Download";
+            this.DownloadButton.UseVisualStyleBackColor = true;
+            this.DownloadButton.Click += new System.EventHandler(this.DownloadButton_Click);
             // 
             // saveFileDialog
             // 
             this.saveFileDialog.Filter = "mp3 File|*.mp3";
             // 
-            // downloadProgressBar
+            // DownloadProgressBar
             // 
-            this.downloadProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.DownloadProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.downloadProgressBar.Location = new System.Drawing.Point(12, 39);
-            this.downloadProgressBar.Name = "downloadProgressBar";
-            this.downloadProgressBar.Size = new System.Drawing.Size(604, 23);
-            this.downloadProgressBar.TabIndex = 2;
+            this.DownloadProgressBar.Location = new System.Drawing.Point(12, 39);
+            this.DownloadProgressBar.Name = "DownloadProgressBar";
+            this.DownloadProgressBar.Size = new System.Drawing.Size(604, 23);
+            this.DownloadProgressBar.TabIndex = 2;
             // 
-            // button2
+            // TitleLabel
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(460, 75);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.TitleLabel.AutoSize = true;
+            this.TitleLabel.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TitleLabel.Location = new System.Drawing.Point(25, 79);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(0, 14);
+            this.TitleLabel.TabIndex = 4;
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Location = new System.Drawing.Point(85, 80);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(0, 12);
+            this.DateLabel.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 110);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.downloadProgressBar);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.downloadUrlTextBox);
+            this.Controls.Add(this.DateLabel);
+            this.Controls.Add(this.TitleLabel);
+            this.Controls.Add(this.DownloadProgressBar);
+            this.Controls.Add(this.DownloadButton);
+            this.Controls.Add(this.DownloadUrlTextBox);
             this.Name = "MainForm";
             this.Text = "EBS Downloader";
             this.ResumeLayout(false);
@@ -100,11 +105,12 @@
 
 		#endregion
 
-		private System.Windows.Forms.TextBox downloadUrlTextBox;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.TextBox DownloadUrlTextBox;
+		private System.Windows.Forms.Button DownloadButton;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
-		private System.Windows.Forms.ProgressBar downloadProgressBar;
-		private System.Windows.Forms.Button button2;
-	}
+		private System.Windows.Forms.ProgressBar DownloadProgressBar;
+        private System.Windows.Forms.Label TitleLabel;
+        private System.Windows.Forms.Label DateLabel;
+    }
 }
 

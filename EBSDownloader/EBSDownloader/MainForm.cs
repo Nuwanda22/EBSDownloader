@@ -20,15 +20,27 @@ namespace EBSDownloader
 			InitializeComponent();
 		}
 
-		private async void button1_Click(object sender, EventArgs e)
+		private async void DownloadButton_Click(object sender, EventArgs e)
 		{
-            string url = "http://wstrotu.ebs.co.kr/ebsvod/lang/2016/10021633/mp3/20160922_110013_f97c8384_mp3.mp3?key=c2673c3448249de11cd8d8d1713ef69a04d45241";
-            string fileName = "20160922_110013_f97c8384_mp3.mp3";
+            if (string.IsNullOrWhiteSpace(DownloadUrlTextBox.Text))
+            {
+                MessageBox.Show("Please fill in the black space.");
+                return;
+            }
+            
+            // Parse HTML
+            var html = CQ.CreateFromUrl(DownloadUrlTextBox.Text);
 
-            saveFileDialog.FileName = fileName;
-			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            // Get Info from HTML
+            TitleLabel.Text = html["h5"].Text().Trim();
+            DateLabel.Text = html["p.date"].Text().Trim().Replace('.', '-');
+
+            // Download mp3
+            var audio = ExtractAudioSource(html["div.body_in script"].ElementAt(1).InnerText);
+            saveFileDialog.FileName = ExtractFilePath(audio);
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{
-                await DownloadFileAsync(url, saveFileDialog.FileName);
+                await DownloadFileAsync(audio, saveFileDialog.FileName);
             }
 		}
 
@@ -38,24 +50,14 @@ namespace EBSDownloader
             {
                 webClient.DownloadProgressChanged += (sender, e) =>
                 {
-                    downloadProgressBar.Value = e.ProgressPercentage;
+                    DownloadProgressBar.Value = e.ProgressPercentage;
                 };
 
                 await webClient.DownloadFileTaskAsync(url, fileName);
 
-                MessageBox.Show("다운로드가 완료되었습니다!");
-                downloadProgressBar.Value = 0;
+                MessageBox.Show("Download Complete.");
+                DownloadProgressBar.Value = 0;
             }
-        }
-        
-		private void button2_Click(object sender, EventArgs e)
-		{
-            var html = CQ.CreateFromUrl(downloadUrlTextBox.Text); 
-            var title = html["h5"].Text().Trim();
-            var date = html["p.date"].Text().Trim();
-            var audio = ExtractAudioSource(html["div.body_in script"].ElementAt(1).InnerText);
-
-            MessageBox.Show($"{title} {DateTime.Parse(date.Replace('.', '-'))}");
         }
 
         private string ExtractAudioSource(string script)
@@ -66,6 +68,12 @@ namespace EBSDownloader
             audio = audio.Substring(0, audio.IndexOf('\''));                // Delete back
 
             return audio;
+        }
+
+        private string ExtractFilePath(string url)
+        {
+            var filePath = Path.GetFileName(url);
+            return filePath.Substring(0, filePath.IndexOf('?'));
         }
 	}
 }
