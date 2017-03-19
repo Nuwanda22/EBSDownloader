@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EBS_듣기평가_다운로더
+namespace EBSDownloader
 {
 	static class Program
 	{

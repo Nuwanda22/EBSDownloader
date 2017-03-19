@@ -8,3 +8,12 @@ D:\GitHub\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기
 D:\GitHub\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기평가 다운로더\bin\Debug\EBS 듣기평가 다운로더.pdb
 D:\GitHub\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기평가 다운로더\obj\Debug\EBS 듣기평가 다운로더.exe
 D:\GitHub\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기평가 다운로더\obj\Debug\EBS 듣기평가 다운로더.pdb
+D:\Projects\Visual Studio Projects\Project\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기평가 다운로더\bin\Debug\EBS 듣기평가 다운로더.exe.config
+D:\Projects\Visual Studio Projects\Project\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기평가 다운로더\obj\Debug\EBS 듣기평가 다운로더.exe
+D:\Projects\Visual Studio Projects\Project\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기평가 다운로더\obj\Debug\EBS 듣기평가 다운로더.pdb
+D:\Projects\Visual Studio Projects\Project\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기평가 다운로더\bin\Debug\EBS 듣기평가 다운로더.exe
+D:\Projects\Visual Studio Projects\Project\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기평가 다운로더\bin\Debug\EBS 듣기평가 다운로더.pdb
+D:\Projects\Visual Studio Projects\Project\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기평가 다운로더\obj\Debug\EBS 듣기평가 다운로더.csprojResolveAssemblyReference.cache
+D:\Projects\Visual Studio Projects\Project\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기평가 다운로더\obj\Debug\EBS_듣기평가_다운로더.MainForm.resources
+D:\Projects\Visual Studio Projects\Project\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기평가 다운로더\obj\Debug\EBS_듣기평가_다운로더.Properties.Resources.resources
+D:\Projects\Visual Studio Projects\Project\EBS_Listening_Test_Downloader\EBS 듣기평가 다운로더\EBS 듣기평가 다운로더\obj\Debug\EBS 듣기평가 다운로더.csproj.GenerateResource.Cache
