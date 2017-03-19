@@ -53,9 +53,19 @@ namespace EBSDownloader
             var html = CQ.CreateFromUrl(downloadUrlTextBox.Text); 
             var title = html["h5"].Text().Trim();
             var date = html["p.date"].Text().Trim();
-            var audio = html["audio"].Attr("src");
-            
+            var audio = ExtractAudioSource(html["div.body_in script"].ElementAt(1).InnerText);
+
             MessageBox.Show($"{title} {DateTime.Parse(date.Replace('.', '-'))}");
+        }
+
+        private string ExtractAudioSource(string script)
+        {
+            string key = "var aodUrl = '";
+
+            var audio = script.Substring(script.IndexOf(key) + key.Length); // Delete front
+            audio = audio.Substring(0, audio.IndexOf('\''));                // Delete back
+
+            return audio;
         }
 	}
 }
